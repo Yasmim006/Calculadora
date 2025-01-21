@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Celsius para Fahrenheit</title>
+  <link rel="stylesheet" href="style-popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Conversor de Temperatura</h1>
+    <p>Insira a temperatura em Celsius para converter:</p>
+    <input type="number" id="celsius" placeholder="Temperatura em Celsius">
+    <button onclick="converter()">Converter</button>
+    <div class="result" id="resultado"></div>
+  </div>
+
+  <script>
+    function converter() {
+      const celsius = document.getElementById('celsius').value;
+      if (celsius === '') {
+        alert('Por favor, insira um valor.');
+        return;
+      }
+      const fahrenheit = (celsius * 9/5) + 32;
+      document.getElementById('resultado').innerText = `${celsius}°C = ${fahrenheit.toFixed(2)}°F`;
+    }
+  </script>
+</body>
+</html>
+
